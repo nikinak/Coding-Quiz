@@ -41,7 +41,7 @@ body {
     padding: 30px 40px;
   }
 
-h3, h9, h10 {
+h3, h9, h10, h11 {
     font-family: 'Trebuchet MS';
     color: var(--darkblue);
     font-size: 40px;
@@ -107,4 +107,9 @@ button:hover {
     margin-top: 20px;
     font-style: italic;
     font-size: 20px;
+}
+
+li {
+    list-style-type: circle;
+    padding: 5px;
 }
