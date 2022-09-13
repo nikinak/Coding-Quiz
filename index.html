@@ -13,14 +13,16 @@
 
 <body>
     <section class="header">
-        <h1>View high scores</h1>
+        <h1 onclick="showHighScores()">View high scores</h1>
         <h2>Time: <span id="timer">60</span></h2>
+        <h2>Score: <span id="startscore">0</span></h2>
     </section>
+    <p class ="small">Note: please do not refresh the tab while the quiz is in progress - this functionality is not supported<p>
     <section class = "container">
         <section id = "start-container">
             <h3 class = "continer-header">Coding Quiz Challenge</h3>
                 <p class ="container-body">
-                    Take this quiz to test your coding knowledge. There are 10 questions and you will start with 60 seconds on the timer. <br> <br> Note: incorrect answers will take away 10 seconds from your timer and affect your end score.</span>
+                    Take this quiz to test your coding knowledge. There are 5 questions and you will start with 60 seconds on the timer. <br> <br> Note: incorrect answers will take away 10 seconds from your timer and affect your end score.</span>
                 </p>
             <button id="start"  class="btn1">Start Quiz</button>
         </section>
@@ -28,50 +30,49 @@
             <div class = 'question'>
                 <h4 id="questionTitle">Which of the below will grab an element from the DOM?</h4>
                 <section id="answer-buttons" class ="btnoptions">
-                    <button class="options" id="op1" onclick="plusSlides(1)">document.getElementById()</button> <br>
-                    <button class="options" id="op2" onclick="plusSlides(1)">function(grabID())</button> <br>
-                    <button class="options" id="op3" onclick="plusSlides(1)">lookup: HTMLID()</button> <br>
-                    <button class="options" id="op4" onclick="plusSlides(1)">go to HTML - ID</button>
+                    <button class="options" id="correct" onclick="plusSlides(1); firstcorrectscore(this.id)">document.getElementById()</button> <br>
+                    <button class="options" id="wrong" onclick="plusSlides(1); firstwrongscore(this.id)">function(grabID())</button> <br>
+                    <button class="options" id="wrong" onclick="plusSlides(1); firstwrongscore(this.id)">lookup: HTMLID()</button> <br>
+                    <button class="options" id="wrong" onclick="plusSlides(1); firstwrongscore(this.id)">go to HTML - ID</button>
                 </section>
-                <p id="answer-validation" class = "bottom"></p>
             </div>
             <div class = 'question'>
                 <h5 id="questionTitle">How do you add an action to an event (like clicking a button) using javascript?</h5>
                 <section id="answer-buttons" class ="btnoptions">
-                    <button class="options" id="op1" onclick="plusSlides(1)">listenfor(buttonclick)</button> <br>
-                    <button class="options" id="op2" onclick="plusSlides(1)">var.addEventListener(x, y)</button> <br>
-                    <button class="options" id="op3" onclick="plusSlides(1)">var.see.event()</button> <br>
-                    <button class="options" id="op4" onclick="plusSlides(1)">listenfor(all).event</button>
+                    <button class="options" id="wrong" onclick="plusSlides(1); addtlwrongscore(this.id)">listenfor(buttonclick)</button> <br>
+                    <button class="options" id="correct" onclick="plusSlides(1); addtlcorrectscore(this.id)">var.addEventListener(x, y)</button> <br>
+                    <button class="options" id="wrong" onclick="plusSlides(1); addtlwrongscore(this.id)">var.see.event()</button> <br>
+                    <button class="options" id="wrong" onclick="plusSlides(1); addtlwrongscore(this.id)">listenfor(all).event</button>
                 </section>
                 <p id="answer-validation" class = "bottom"></p>
             </div>
             <div class = 'question'>
             <h6 id="questionTitle">How do you add class elements to an HTML object using Javascript?</h6>
             <section id="answer-buttons" class ="btnoptions">
-                <button class="options" id="op1" onclick="plusSlides(1)">query:CSS(function(add)</button> <br>
-                <button class="options" id="op2" onclick="plusSlides(1)">Not possible</button> <br>
-                <button class="options" id="op3" onclick="plusSlides(1)">add(class){(type)}</button> <br>
-                <button class="options" id="op4" onclick="plusSlides(1)">var.classList.add(x)</button>
+                <button class="options" id="wrong" onclick="plusSlides(1); addtlwrongscore(this.id)">query:CSS(function(add)</button> <br>
+                <button class="options" id="wrong" onclick="plusSlides(1); addtlwrongscore(this.id)">Not possible</button> <br>
+                <button class="options" id="wrong" onclick="plusSlides(1); addtlwrongscore(this.id)">add(class){(type)}</button> <br>
+                <button class="options" id="correct" onclick="plusSlides(1); addtlcorrectscore(this.id)">var.classList.add(x)</button>
             </section>
             <p id="answer-validation" class = "bottom"></p>
             </div>
             <div class = 'question'>
                 <h7 id="questionTitle">What function can you use to get the length of a string?</h7>
                 <section id="answer-buttons" class ="btnoptions">
-                    <button class="options" id="op1" onclick="plusSlides(1)">.length</button> <br>
-                    <button class="options" id="op2" onclick="plusSlides(1)">.howlong</button> <br>
-                    <button class="options" id="op3" onclick="plusSlides(1)">.measure</button> <br>
-                    <button class="options" id="op4" onclick="plusSlides(1)">.distance</button>
+                    <button class="options" id="correct" onclick="plusSlides(1); addtlcorrectscore(this.id)">.length</button> <br>
+                    <button class="options" id="wrong" onclick="plusSlides(1); addtlwrongscore(this.id)">.howlong</button> <br>
+                    <button class="options" id="wrong" onclick="plusSlides(1); addtlwrongscore(this.id)">.measure</button> <br>
+                    <button class="options" id="wrong" onclick="plusSlides(1); addtlwrongscore(this.id)">.distance</button>
                 </section>
                 <p id="answer-validation" class = "bottom"></p>
             </div>
             <div class = 'question'>
                 <h8 id="questionTitle">Which of the following is a valid way to store data locally?</h8>
                 <section id="answer-buttons" class ="btnoptions">
-                    <button class="options" id="op1" onclick="quizComplete()">saveInStorage.Item</button> <br>
-                    <button class="options" id="op2" onclick="quizComplete()">myStorage.set</button> <br>
-                    <button class="options" id="op3" onclick="quizComplete()">localStorage.setItem</button> <br>
-                    <button class="options" id="op4" onclick="quizComplete()">storeNow.var</button>
+                    <button class="options" id="wrong" onclick="addtlwrongscore(this.id); quizComplete()">saveInStorage.Item</button> <br>
+                    <button class="options" id="wrong" onclick="addtlwrongscore(this.id); quizComplete()">myStorage.set</button> <br>
+                    <button class="options" id="correct" onclick="addtlcorrectscore(this.id);quizComplete()">localStorage.setItem</button> <br>
+                    <button class="options" id="wrong" onclick="addtlwrongscore(this.id); quizComplete()">storeNow.var</button>
                 </section>
                 <p id="answer-validation" class = "bottom"></p>
             </div>
