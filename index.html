@@ -17,36 +17,82 @@
         <h2>Time: 0</h2>
     </section>
     <section class = "container">
-        <h3 class = "continer-header">Coding Quiz Challenge</h1>
-            <p class ="container-body">
-                Take this quiz to test your coding knowledge. There are 10 questions and you will start with 60 seconds on the timer. <br> <br> Note: incorrect answers will take away 10 seconds from your timer and affect your end score.</span>
-            </p>
-        <button id="start" class="btn1">Start Quiz</button>
-    <section>
-        <div id="questionTitle"></div>
-        <ul>
-            <li class="options"></li>
-            <li class="options"></li>
-            <li class="options"></li>
-            <li class="options"></li>
-        </ul>
-    </section>
-    <section>
-        <h4>Quiz Complete!</h4>
-        <p>Your final score is <span>0</span>.</p>
-        <br>
-        <label>Enter your initials:</label>
+        <section id = "start-container">
+            <h3 class = "continer-header">Coding Quiz Challenge</h3>
+                <p class ="container-body">
+                    Take this quiz to test your coding knowledge. There are 10 questions and you will start with 60 seconds on the timer. <br> <br> Note: incorrect answers will take away 10 seconds from your timer and affect your end score.</span>
+                </p>
+            <button id="start"  class="btn1">Start Quiz</button>
+        </section>
+        <section id="question-container">
+            <div class = 'question'>
+                <h4 id="questionTitle">Hi</h4>
+                <section id="answer-buttons" class ="btnoptions">
+                    <button class="options" id="op1" onclick="plusSlides(1)">1</button> <br>
+                    <button class="options" id="op2" onclick="plusSlides(1)">2</button> <br>
+                    <button class="options" id="op3" onclick="plusSlides(1)">3</button> <br>
+                    <button class="options" id="op4" onclick="plusSlides(1)">4</button>
+                </section>
+                <p id="answer-validation" class = "bottom"></p>
+            </div>
+            <div class = 'question'>
+                <h5 id="questionTitle">Yo</h5>
+                <section id="answer-buttons" class ="btnoptions">
+                    <button class="options" id="op1" onclick="plusSlides(1)">1</button> <br>
+                    <button class="options" id="op2" onclick="plusSlides(1)">2</button> <br>
+                    <button class="options" id="op3" onclick="plusSlides(1)">3</button> <br>
+                    <button class="options" id="op4" onclick="plusSlides(1)">4</button>
+                </section>
+                <p id="answer-validation" class = "bottom"></p>
+            </div>
+            <div class = 'question'>
+            <h6 id="questionTitle">Wazzup</h6>
+            <section id="answer-buttons" class ="btnoptions">
+                <button class="options" id="op1" onclick="plusSlides(1)">1</button> <br>
+                <button class="options" id="op2" onclick="plusSlides(1)">2</button> <br>
+                <button class="options" id="op3" onclick="plusSlides(1)">3</button> <br>
+                <button class="options" id="op4" onclick="plusSlides(1)">4</button>
+            </section>
+            <p id="answer-validation" class = "bottom"></p>
+            </div>
+            <div class = 'question'>
+                <h7 id="questionTitle">Working?</h7>
+                <section id="answer-buttons" class ="btnoptions">
+                    <button class="options" id="op1" onclick="plusSlides(1)">1</button> <br>
+                    <button class="options" id="op2" onclick="plusSlides(1)">2</button> <br>
+                    <button class="options" id="op3" onclick="plusSlides(1)">3</button> <br>
+                    <button class="options" id="op4" onclick="plusSlides(1)">4</button>
+                </section>
+                <p id="answer-validation" class = "bottom"></p>
+            </div>
+            <div class = 'question'>
+                <h8 id="questionTitle">Last Question</h8>
+                <section id="answer-buttons" class ="btnoptions">
+                    <button class="options" id="op1" onclick="quizComplete()">1</button> <br>
+                    <button class="options" id="op2" onclick="quizComplete()">2</button> <br>
+                    <button class="options" id="op3" onclick="quizComplete()">3</button> <br>
+                    <button class="options" id="op4" onclick="quizComplete()">4</button>
+                </section>
+                <p id="answer-validation" class = "bottom"></p>
+            </div>
+        </section>
+        <section id="complete-container" class="hide">
+            <h9>Quiz Complete!</h9>
+            <p>Your final score is <span id="finalscore">200</span>.</p>
+            <br>
+            <label>Enter your initials:</label>
             <input type="text" id="initals">
-        <button id="submithighscore" class="btn2">Submit</button>
+            <button id="submithighscore" class="btn2" onclick="addHighScore()">Submit</button>
+        </section>
+        <section id="high-score-container" class = "hide">
+            <h10>High Scores</h10>
+            <li></li>
+            <button id="goBack" class="btn3" onclick="mainPage()">Go Back to Start</button>
+            <button id="Clear" class="btn4" onclick="clearHighScore()">Clear High Scores</button>
+        </section>
     </section>
-    <section>
-        <h5>High Scores</h5>
-        <li></li>
-        <button id="goBack" class="btn3">Go Back to Start</button>
-        <button id="Clear" class="btn4">Clear High Scores</button>
-    </section>
-
 </body>
+
 </html>
 
 <script src="./Develop/script.js"></script>
