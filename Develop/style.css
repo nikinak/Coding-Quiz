@@ -1,3 +1,5 @@
+.question {display: none}
+
 :root {
     --darkblue: rgb(28, 57, 101);
     --lightblue: rgb(180, 202, 247);
@@ -39,11 +41,27 @@ body {
     padding: 30px 40px;
   }
 
-h3, h4, h5 {
+h3, h9, h10 {
     font-family: 'Trebuchet MS';
     color: var(--darkblue);
     font-size: 40px;
     text-align: center;
+    padding-bottom: 20px;
+}
+
+#headerform {
+    font-family: 'Trebuchet MS';
+    color: var(--darkblue);
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#questionTitle {
+    font-family: 'Trebuchet MS';
+    color: var(--darkblue);
+    font-size: 40px;
+    text-align: left;
     padding-bottom: 20px;
 }
 
@@ -66,12 +84,15 @@ button:hover {
     margin: 16px 16px 16px 330px;
 }
 
-.questionTitle {
-    font-family: 'Trebuchet MS';
-    color: var(--darkblue);
-    font-size: 40px;
-    text-align: center;
-    padding-bottom: 20px;
+.hide {
+    display: none;
+}
+
+.options {
+    margin-top: 12px;
+    border-radius: 0px;
+    width: 400px;
+    text-align: left;
 }
 
 .btn2 {
@@ -82,6 +103,8 @@ button:hover {
     margin-left: 160px;
 }
 
-/* .btn4 {
-    margin: 16px 16px 16px 330px;
-} */
+.bottom {
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 20px;
+}
