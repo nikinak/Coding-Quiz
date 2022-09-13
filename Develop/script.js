@@ -1,3 +1,4 @@
+// define global variables that relate to page elements
 var startButton = document.getElementById('start');
 var startPage = document.getElementById('start-container');
 var questionPage = document.getElementById('question-container');
@@ -9,6 +10,7 @@ var finalScoreText = document.getElementById('finalscore');
 var highScorePage = document.getElementById('high-score-container');
 var timeUpPage = document.getElementById('time-up-container');
 
+// define global variables for stored high scores
 var nameTwo = document.getElementById("nameTwo");
 var nameTwo = document.getElementById("nameTwo");
 var nameThree = document.getElementById("nameThree");
@@ -20,13 +22,16 @@ var nameEight = document.getElementById("nameEight");
 var nameNine = document.getElementById("nameNine");
 var nameTen = document.getElementById("nameTen");
 
+// define global variables for the timer
 const timerEl = document.querySelector("#timer");
 var timerInterval;
 var totalTime = 60;
 var secondsLeft = 0;
 
+// hide question card
 questionPage.classList.add('hide');
 
+// function to start quiz - displays the question card and sets up start timer
 startButton.addEventListener('click',startQuiz)
 
 function startQuiz() {
@@ -36,6 +41,7 @@ function startQuiz() {
     startTimer();
 }
 
+// function to run the timer; added funcitonality for when time elapses
 function startTimer() {
     timerEl.textContent = totalTime;
     timerInterval = setInterval(function () {
@@ -49,10 +55,12 @@ function startTimer() {
     }, 1000);
 }
 
+// function to stop timer (either at the end, if the user navigates away)
 function stopTimer() {
     clearInterval(timerInterval);
 }
 
+// functions below work to ensure question procees from 1 - 5
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -71,6 +79,7 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
 }
 
+// functions below set initial score values based on inital input and create the first local storage
 function firstcorrectscore(clicked_id) {
     var currentscore = 0
     var newscore = (currentscore +10);
@@ -88,6 +97,7 @@ function firstwrongscore(clicked_id) {
     secondsLeft += 10
 }
 
+// functions below continue to score values calculation based on additional answers; score at the top gets updated appropriately and timer reduces as questions are answered wrong
 function addtlcorrectscore(clicked_id) {
     var currentscore = parseInt(localStorage.getItem("start-score"));
     var newscore = (currentscore + 10);
@@ -105,7 +115,7 @@ function addtlwrongscore(clicked_id) {
     secondsLeft += 10
 }
 
-
+// function initiates quix over but finalizing the score value, hiding question cards, and stopping the timer
 function quizComplete() {
     var currentscore = parseInt(localStorage.getItem("start-score"));
     completePage.classList.remove('hide');
@@ -114,12 +124,7 @@ function quizComplete() {
     stopTimer();
 }
 
-function finalScoreCalc() {
-    // add calculation for final score
-}
-
-
-
+// function pulls togteher all stored scores -> these can be over multiple quiz submissions and user wil be able to see their prior scores until they reset
 function myInitials() {
     var ainitials = !!localStorage.getItem('initials') ? JSON.parse(localStorage.getItem('initials')) : [];
     var initials = (document.getElementById("initals").value) + " - "+ (parseInt(localStorage.getItem("start-score")));
@@ -176,10 +181,10 @@ function myInitials() {
         document.getElementById("nameTen").textContent = storedInitials [9];
         nameTen.classList.remove('hide');
     }
-  }
+}
 
 
-
+// function directs user back tot he start and re-sets the score
 function mainPage() {
     location.reload();
     var newscore = [];
@@ -188,6 +193,7 @@ function mainPage() {
     document.getElementById("startscore").textContent = newscore;
 }
 
+// function clears high scores and also ensures data is hidden before the user goes back tot he main page
 function clearHighScore() {
     window.localStorage.clear();
     nameOne.classList.add('hide');
@@ -202,6 +208,7 @@ function clearHighScore() {
     nameTen.classList.add('hide');
 }
 
+// separate function to define highscores when top buitton is pressd -> needed a different funciton to ensure null values were not stored
 function showHighScores() {
     stopTimer();
     var ainitials = !!localStorage.getItem('initials') ? JSON.parse(localStorage.getItem('initials')) : [];
@@ -260,7 +267,3 @@ function showHighScores() {
         nameTen.classList.remove('hide');
     }
   }
-
-  window.onbeforeunload = function() {
-    alert ("Please do not refresh the page while taking the quiz as this functionality is not supported - either let the timer run out, view highscores or click through the questions!");
-}

@@ -6,7 +6,6 @@
     --lightgray: rgb(240, 240, 240);
 }
 
-/* defines default text formatting*/
 body {
     background-color: #d9dcd6;
     font-family: 'Arial';
@@ -32,15 +31,20 @@ h1:hover {
     color: var(--lightblue);
 }
 
+.header h2 {
+    margin-right: 20px;
+    float: right;
+}
+
+.header h3 {
+    margin-right: 20px;
+    float: right;
+}
+
 .small {
     font-size: 10px;
     margin-top: 5px;
     margin-left: 5px;
-}
-
-.header h2 {
-    margin-right: 20px;
-    float: right;
 }
 
 .container {
@@ -53,7 +57,7 @@ h1:hover {
     padding: 30px 40px;
   }
 
-h3, h9, h10, h11 {
+h4, h9, h10, h11, h12 {
     font-family: 'Trebuchet MS';
     color: var(--darkblue);
     font-size: 40px;
@@ -69,14 +73,6 @@ h3, h9, h10, h11 {
     padding-bottom: 20px;
 }
 
-#questionTitle {
-    font-family: 'Trebuchet MS';
-    color: var(--darkblue);
-    font-size: 40px;
-    text-align: left;
-    padding-bottom: 20px;
-}
-
 button {
     border: none;
     background-color: var(--darkblue);
@@ -85,12 +81,11 @@ button {
     line-height: 20px;
     padding: 10px 25px;
     cursor: pointer;
-  }
+}
 
-  /* Added in a hover style for the botton */
 button:hover {
     background-color: var(--lightblue);
-  }
+}
 
 .btn1 {
     margin: 16px 16px 16px 330px;
@@ -98,6 +93,14 @@ button:hover {
 
 .hide {
     display: none;
+}
+
+#questionTitle {
+    font-family: 'Trebuchet MS';
+    color: var(--darkblue);
+    font-size: 40px;
+    text-align: left;
+    padding-bottom: 20px;
 }
 
 .options {
@@ -113,12 +116,6 @@ button:hover {
 
 .btn3 {
     margin-left: 160px;
-}
-
-.bottom {
-    margin-top: 20px;
-    font-style: italic;
-    font-size: 20px;
 }
 
 li {
