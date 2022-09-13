@@ -15,12 +15,12 @@
     <section class="header">
         <h1 onclick="showHighScores()">View high scores</h1>
         <h2>Time: <span id="timer">60</span></h2>
-        <h2>Score: <span id="startscore">0</span></h2>
+        <h3>Score: <span id="startscore">0</span></h3>
     </section>
     <p class ="small">Note: please do not refresh the tab while the quiz is in progress - this functionality is not supported<p>
     <section class = "container">
         <section id = "start-container">
-            <h3 class = "continer-header">Coding Quiz Challenge</h3>
+            <h4 class = "continer-header">Coding Quiz Challenge</h4>
                 <p class ="container-body">
                     Take this quiz to test your coding knowledge. There are 5 questions and you will start with 60 seconds on the timer. <br> <br> Note: incorrect answers will take away 10 seconds from your timer and affect your end score.</span>
                 </p>
@@ -28,7 +28,7 @@
         </section>
         <section id="question-container">
             <div class = 'question'>
-                <h4 id="questionTitle">Which of the below will grab an element from the DOM?</h4>
+                <h5 id="questionTitle">Which of the below will grab an element from the DOM?</h5>
                 <section id="answer-buttons" class ="btnoptions">
                     <button class="options" id="correct" onclick="plusSlides(1); firstcorrectscore(this.id)">document.getElementById()</button> <br>
                     <button class="options" id="wrong" onclick="plusSlides(1); firstwrongscore(this.id)">function(grabID())</button> <br>
@@ -37,7 +37,7 @@
                 </section>
             </div>
             <div class = 'question'>
-                <h5 id="questionTitle">How do you add an action to an event (like clicking a button) using javascript?</h5>
+                <h6 id="questionTitle">How do you add an action to an event (like clicking a button) using javascript?</h6>
                 <section id="answer-buttons" class ="btnoptions">
                     <button class="options" id="wrong" onclick="plusSlides(1); addtlwrongscore(this.id)">listenfor(buttonclick)</button> <br>
                     <button class="options" id="correct" onclick="plusSlides(1); addtlcorrectscore(this.id)">var.addEventListener(x, y)</button> <br>
@@ -47,7 +47,7 @@
                 <p id="answer-validation" class = "bottom"></p>
             </div>
             <div class = 'question'>
-            <h6 id="questionTitle">How do you add class elements to an HTML object using Javascript?</h6>
+            <h7 id="questionTitle">How do you add class elements to an HTML object using Javascript?</h7>
             <section id="answer-buttons" class ="btnoptions">
                 <button class="options" id="wrong" onclick="plusSlides(1); addtlwrongscore(this.id)">query:CSS(function(add)</button> <br>
                 <button class="options" id="wrong" onclick="plusSlides(1); addtlwrongscore(this.id)">Not possible</button> <br>
@@ -57,7 +57,7 @@
             <p id="answer-validation" class = "bottom"></p>
             </div>
             <div class = 'question'>
-                <h7 id="questionTitle">What function can you use to get the length of a string?</h7>
+                <h8 id="questionTitle">What function can you use to get the length of a string?</h8>
                 <section id="answer-buttons" class ="btnoptions">
                     <button class="options" id="correct" onclick="plusSlides(1); addtlcorrectscore(this.id)">.length</button> <br>
                     <button class="options" id="wrong" onclick="plusSlides(1); addtlwrongscore(this.id)">.howlong</button> <br>
@@ -67,7 +67,7 @@
                 <p id="answer-validation" class = "bottom"></p>
             </div>
             <div class = 'question'>
-                <h8 id="questionTitle">Which of the following is a valid way to store data locally?</h8>
+                <h9 id="questionTitle">Which of the following is a valid way to store data locally?</h9>
                 <section id="answer-buttons" class ="btnoptions">
                     <button class="options" id="wrong" onclick="addtlwrongscore(this.id); quizComplete()">saveInStorage.Item</button> <br>
                     <button class="options" id="wrong" onclick="addtlwrongscore(this.id); quizComplete()">myStorage.set</button> <br>
@@ -78,7 +78,7 @@
             </div>
         </section>
         <section id="complete-container" class="hide">
-            <h9>Quiz Complete!</h9>
+            <h10>Quiz Complete!</h10>
             <p>Your final score is <span id="finalscore">200</span>.</p>
             <br>
             <label>Enter your initials:</label>
@@ -87,7 +87,7 @@
             <p id="demo"></p>
         </section>
         <section id="high-score-container" class = "hide">
-            <h10>Previous 10 Scores</h10>
+            <h11>Previous 10 Scores</h11>
             <ul id="last-high-score">
                 <li id = "nameOne"></li>
                 <li id = "nameTwo" class = 'hide'></li>
@@ -105,7 +105,7 @@
             <button id="Clear" class="btn4" onclick="clearHighScore()">Clear High Scores</button>
         </section>
         <section id="time-up-container" class = "hide">
-            <h11>You have run out of time! Press the button below to restart the quiz.</h11>
+            <h12>You have run out of time! Press the button below to restart the quiz.</h12>
             <button id="goBack" class="btn3" onclick="mainPage()">Go Back to Start</button>
         </section>
     </section>
